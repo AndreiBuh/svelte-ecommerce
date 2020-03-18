@@ -1,0 +1,13 @@
+Strapi -> headless CMS built with Node.js -> backend API
+Stripe -> payments
+Svelte -> routing, stores
+Cloudinary -> Manage, optimize, and deliver images and videos at scale
+Netlify -> host & deploy our Svelte Frontend App
+Heroku -> host & deploy Backend API Strapi App
+
+1.Routing
+
+ -> no built-in routing for Svelte
+ -> https://github.com/EmilTholin/svelte-routing
+ -> npm install npm install --save svelte-routing   -> very similar with react-router-dom
+ -> { Router, Route, Link }
