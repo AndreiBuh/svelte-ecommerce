@@ -11,3 +11,19 @@ Heroku -> host & deploy Backend API Strapi App
  -> https://github.com/EmilTholin/svelte-routing
  -> npm install npm install --save svelte-routing   -> very similar with react-router-dom
  -> { Router, Route, Link }
+ -> Can't use class on <Link>. Use getProps() for style. Better solution is to use {link}  -> use: link
+  !!!! for button links the best solution is to use <a href="/" use:link>  !!!!!!!!
+
+2. Store
+
+- single source of truth - store
+- generally we set multiple stores: products store, cart store, global store etc.
+- subscribe to the store
+- store object offers us methods: subscribe(), set(), update() -> see with console.log(store)
+- store unsubscribe() -> clean the subscription after unmounting the component
+                      -> unsubscribe() the store when the component unmounts
+                      -> avoid memory leaks
+- store unsubscribe() shorthand: $productsStore -> unsubscribe() automatically when unmount
+
+
+import { writable } from 'svelte/store';
