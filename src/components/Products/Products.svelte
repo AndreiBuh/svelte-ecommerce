@@ -1,20 +1,9 @@
 <script>
-  // import { onMount, onDestroy } from "svelte";
-
-  export let title;
-
   import productsStore from "../../stores/products-store";
   import Product from "./Product.svelte";
+  import Loading from "../Loading.svelte";
 
-  // let unsubscribe;
-  // onMount(() => {
-  //   unsubscribe = productsStore.subscribe(storeData => {
-  //     localProducts = storeData;
-  //   });
-  // });
-  // onDestroy(() => {
-  //   unsubscribe();
-  // });
+  export let title;
 </script>
 
 <section class="section">
@@ -22,6 +11,8 @@
   <div class="products-center">
     {#each $productsStore as product (product.id)}
       <Product {product} />
+    {:else}
+      <Loading />
     {/each}
   </div>
 </section>

@@ -9,6 +9,13 @@
 
   //router
   import { Router, Route, Link } from "svelte-routing";
+
+  //components
+  import Navbar from "./components/Navbar/Navbar.svelte";
+  import Sidebar from "./components/Navbar/Sidebar.svelte";
+
+  //global store
+  import globalStore from "./stores/global-store.js";
 </script>
 
 <style>
@@ -16,11 +23,10 @@
 </style>
 
 <Router>
-  <nav class="navbar">
-    <Link to="/">Home</Link>
-    <Link to="/about">About</Link>
-    <Link to="/products">Products</Link>
-  </nav>
+  <Navbar />
+  {#if $globalStore.sidebar}
+    <Sidebar />
+  {/if}
   <Route path="/" component={Home} />
   <Route path="/about" component={About} />
   <Route path="/login" component={Login} />

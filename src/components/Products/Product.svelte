@@ -7,10 +7,8 @@
 
 <article class="product">
   <div class="image-container">
-    <image src={image} alt={title} />
-    <a href={`/products/${id}`} class="btn btn-primary product-link" use:link>
-      details
-    </a>
+    <img src={image} alt={title} />
+    <a href={`/products/${id}`} class="btn btn-primary" use:link>details</a>
   </div>
   <div class="product-footer">
     <p class="product-title">{title}</p>

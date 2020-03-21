@@ -27,3 +27,9 @@ Heroku -> host & deploy Backend API Strapi App
 
 
 import { writable } from 'svelte/store';
+
+filter()
+Derived store
+
+let screenWidth;
+<svelte:window bind:innerWidth={screenWidth}>

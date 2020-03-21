@@ -4,9 +4,10 @@
   import Hero from "../components/Hero.svelte";
 
   //featured products
+  import Featured from "../components/Products/Featured.svelte";
 </script>
 
-<h1>Home page</h1>
 <Hero>
   <a href="/products" use:link class="btn btn-primary btn-hero">Shop now</a>
 </Hero>
+<Featured title="Featured products" />
