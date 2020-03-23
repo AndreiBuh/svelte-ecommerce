@@ -33,3 +33,12 @@ Derived store
 
 let screenWidth;
 <svelte:window bind:innerWidth={screenWidth}>
+
+
+3. Strapi
+
+- STRAPI -> most popular free headless CMS
+- STRIPE-> payment processor vs Paypal
+- CLAUDINARY.io-> host our images
+- HEROKU -> deploy our strapi app
+- NETLIFY -> deploy our frontend Svelte

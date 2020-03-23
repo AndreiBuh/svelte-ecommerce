@@ -13,7 +13,7 @@
   //components
   import Navbar from "./components/Navbar/Navbar.svelte";
   import Sidebar from "./components/Navbar/Sidebar.svelte";
-
+  import Cart from "./components/Cart/Cart.svelte";
   //global store
   import globalStore from "./stores/global-store.js";
 </script>
@@ -26,6 +26,9 @@
   <Navbar />
   {#if $globalStore.sidebar}
     <Sidebar />
+  {/if}
+  {#if $globalStore.cart}
+    <Cart />
   {/if}
   <Route path="/" component={Home} />
   <Route path="/about" component={About} />
