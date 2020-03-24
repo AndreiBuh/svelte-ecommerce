@@ -29,7 +29,7 @@ Heroku -> host & deploy Backend API Strapi App
 import { writable } from 'svelte/store';
 
 filter()
-Derived store
+Derived store -> if you are using the same functionality multiple places it does make sense to use derived store
 
 let screenWidth;
 <svelte:window bind:innerWidth={screenWidth}>

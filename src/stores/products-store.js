@@ -9,6 +9,6 @@ const flattenProducts = storeData => {
   });
 };
 
-const store = writable(flattenProducts([...localProducts]));
+const productsStore = writable(flattenProducts([...localProducts]));
 
-export default store;
+export default productsStore;
