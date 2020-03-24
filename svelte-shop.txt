@@ -40,5 +40,18 @@ let screenWidth;
 - STRAPI -> most popular free headless CMS
 - STRIPE-> payment processor vs Paypal
 - CLAUDINARY.io-> host our images
-- HEROKU -> deploy our strapi app
-- NETLIFY -> deploy our frontend Svelte
+- HEROKU -> deploy & host our strapi app
+- NETLIFY -> deploy & host our frontend Svelte
+
+New Strapi app
+->   npx create-strapi-app my-project --quickstart
+-> --quickstart mean that you get a default DB -> sqlLite
+->   npm run develop
+Strapi is a Node.js app
+-> localhost:1337/admin
+
+-> In production you will have to add your data one more time to Strapi Admin Dashboard
+-> By default access to our API is restricted localhost:1337/products -> Rules & permissions
+
+Users is created by deafult in Strapi.
+When we login we get a token.

@@ -6,13 +6,17 @@
   import userStore from "../stores/user-store";
 
   //logout
+  import { logoutUser } from "../stores/user-store";
 </script>
 
 {#if $userStore.jwt}
   <a
     href="/"
     class="logout-btn"
-    on:click={() => globalStore.toggleItem('sidebar', false)}>
+    on:click={() => {
+      globalStore.toggleItem('sidebar', false);
+      logoutUser();
+    }}>
     logout
   </a>
 {:else}
