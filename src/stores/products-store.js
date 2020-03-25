@@ -1,13 +1,10 @@
 import { writable } from "svelte/store";
-import url from "../strapi/URL";
-import localProducts from "../localProducts";
 import getProducts from "../strapi/getProducts";
 
 // subscribe, set, update methods
 const flattenProducts = storeData => {
   return storeData.map(product => {
-    // let image = product.image.url;
-    let image = `${url}${product.image.url}`;
+    let image = product.image.url;
     return { ...product, image };
   });
 };

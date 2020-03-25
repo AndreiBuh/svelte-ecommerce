@@ -2,13 +2,14 @@
   import loginUser from "../strapi/loginUser";
   import registerUser from "../strapi/registerUser";
   import { navigate } from "svelte-routing";
+  import globalStore from "../stores/global-store";
 
   let email = "";
   let password = "";
   let username = "default username";
   let isMember = true;
 
-  $: isEmpty = !email || !password || !username;
+  $: isEmpty = !email || !password || !username || $globalStore.alert;
 
   function toggleMember() {
     isMember = !isMember;
@@ -20,6 +21,8 @@
   }
 
   async function handleSumbit() {
+    //add
+    globalStore.toggleItem("alert", true, "Loading data...Please wait");
     let user;
     if (isMember) {
       user = await loginUser({ email, password });
@@ -28,8 +31,16 @@
     }
     if (user) {
       navigate("/products");
+      //add alert
+      globalStore.toggleItem("alert", true, "welcome to shopping");
       return;
     }
+    globalStore.toggleItem(
+      "alert",
+      true,
+      "There was an error! Please try again",
+      true
+    );
   }
 </script>
 
